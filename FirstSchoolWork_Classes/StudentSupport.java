@@ -10,7 +10,7 @@ public class StudentSupport {
         count = new int[5];
     }
 
-    //Returns number of student total
+    //Returns number of student in total
     public int countStudents() {
         //finding all the lessons while skipping empty slots (in case [V][N][V][V] -> 3)
         int counter = 0;
