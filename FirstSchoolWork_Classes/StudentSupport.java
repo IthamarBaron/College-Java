@@ -10,6 +10,7 @@ public class StudentSupport {
         count = new int[5];
     }
 
+    //Returns number of student total
     public int countStudents() {
         //finding all the lessons while skipping empty slots (in case [V][N][V][V] -> 3)
         int counter = 0;
@@ -20,9 +21,10 @@ public class StudentSupport {
         return counter;
     }
 
+    //Adds a lesson if there is an available slot.
     public void addLesson(StudLes lesson) {
         if (this.countStudents() >= 12)
-            System.out.print("No more space!");
+            System.out.println("No more space!");
         else {
             //find the first available slot and place it there.
             for (int i = 0; i < arr.length; i++) {
@@ -35,6 +37,7 @@ public class StudentSupport {
         }
     }
 
+    //Displays all the students in a given day
     public void displayDay(byte day) {
         if (day >= 1 && day <= 5)
         {
