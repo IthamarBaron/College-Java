@@ -35,6 +35,42 @@ public class Main
         } else {
             System.out.println("No taxi available for -1 passengers.");
         }
+        System.out.println("============== [QUESTION 2] ==============" );
+        Resume resume1 = new Resume("Alice", 30, 5);
+        Resume resume2 = new Resume("Bob", 28, 5);
+
+        // Add job histories to the resumes
+        resume1.addJob(2015, 2018, "Company A", "Developer"); // 3 years
+        resume1.addJob(2019, 2021, "Company B", "Developer"); // 2 years
+        resume1.addJob(2022, 2023, "Company C", "Manager");   // 1 year
+
+        resume2.addJob(2016, 2019, "Company D", "Developer"); // 3 years
+        resume2.addJob(2020, 2022, "Company E", "Designer");  // 2 years
+
+        // Test 1: Check total veteranship in "Developer"
+        int aliceDeveloperExperience = resume1.totalVeteranship("Developer");
+        System.out.println("Alice's total veteranship as Developer: " + aliceDeveloperExperience); // Expected: 5
+
+        // Test 2: Check total veteranship in "Designer"
+        int bobDesignerExperience = resume2.totalVeteranship("Designer");
+        System.out.println("Bob's total veteranship as Designer: " + bobDesignerExperience); // Expected: 2
+
+        // Test 3: Print all resumes with at least 2 years experience as Developer
+        System.out.println("Employees with at least 2 years experience as Developer:");
+        Resume[] resumes = {resume1, resume2};
+        ResumeUtils.printQualifiedEmployees(resumes, "Developer", 2);
+        // Expected output: Alice, Bob
+
+        // Test 4: Print all resumes with at least 1 year experience as Manager
+        System.out.println("Employees with at least 1 year experience as Manager:");
+        ResumeUtils.printQualifiedEmployees(resumes, "Manager", 1);
+        // Expected output: Alice
+
+        // Test 5: Print all resumes with at least 3 years experience as Developer
+        System.out.println("Employees with at least 3 years experience as Developer:");
+        ResumeUtils.printQualifiedEmployees(resumes, "Developer", 3);
+        // Expected output: Alice, Bob (both have 3+ years)
+
 
         System.out.println("============== [QUESTION 3] ==============" );
         // Create a StudentSupport instance
