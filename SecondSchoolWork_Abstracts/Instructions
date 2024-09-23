@@ -1,0 +1,5 @@
+Define a base class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle, Square, and Rectangle that inherit from Shape and implement these methods appropriately.
+In the Circle class, calculate area and perimeter using the formulas πr² and 2πr, respectively.
+In the Square class, calculate area and perimeter using the formula side² for both.
+In the Rectangle class, calculate area and perimeter using the formulas length * width and 2 * (length + width), respectively.
+Create instances of each shape class and call their calculateArea() and calculatePerimeter() methods to demonstrate their functionality.
