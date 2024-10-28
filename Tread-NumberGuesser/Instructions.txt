@@ -1,0 +1,5 @@
+// 1 Generate a random number between 1 and 100
+// 2 start timer and count- print each second
+// 3 ask user to guess the number
+// 4 if the user guesses the number, stop the timer, and show number of guesses & the time it took to guess
+// 5 if the user does not guess the number, keep the timer running, and tell him higher or lower
