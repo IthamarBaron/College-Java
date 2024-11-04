@@ -1,0 +1,5 @@
+Write a program that creates 5 threads
+
+Each thread randomizes a number between 0-10
+
+The main thread will calculate and print the sum of results of all 5 threads
