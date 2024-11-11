@@ -1,0 +1,67 @@
+
+תרגיל - THREAD POOL
+עד כה השתמשנו במנגנון ה synchronized לטובת סינכרון בין threads – כלומר רק thread אחד יוכל לבצע קטע קוד קריטי שמוגן על ידי synchronized.
+בתרגיל הבא מגביל את מספר THREADS המקסימלי שנאפשר להם לרוץ בו זמנית.
+ניצור מחלקה שנקראת ThreadPool שמאפשרת ל N  threads   לבצע לבצע קטע קוד נתון  בו זמנית (N  יוגדר בזימון הבנאי).
+כל thread בתחילת הריצה שלו מזמן את הפעולה acquire במחלקה ThreadPool  
+תפקיד פעולה זו - להגביל את מספר  ה THREADS שיכולים לרוץ בו זמנית, כלומר - כל THREAD  שחוזר מהפעולה - מבצע את הקוד ולאחר מכן כשמסיים הוא יזמן את הפעולה release  במחלקה ThreadPool . 
+אופן הריצה של כל THREAD
+
+Run
+{
+
+ System.out.println(“ calling acquire “)
+
+ThreadPool.acquire(this)
+
+ System.out.println(“ after  acquire DOING WORK“)
+
+sleep(500)
+
+ System.out.println(“ FINISHED WORK - RELEASING“)
+
+ThreadPool.release()
+ System.out.println(“ AFTER RELEASE“)
+
+
+}
+
+
+
+
+הפעולה  Acquire
+
+acquire( )
+{
+  if( num of active threads < max)
+{
+	Active thread++
+	return
+}
+Else
+{
+sync(THreadsArray)
+	putThread in waiting threads array 
+	Make thread to wait
+
+}
+
+}
+
+
+הפעולה Release
+Release()
+{
+ Num of active threads–
+if( threads in Thread array)
+    Notify Thread from Thread array
+    Num of active threads++
+
+
+    
+
+}
+
+
+ , לאחר החזרה מהפעולה – הthread יוכל לגשת לביצוע קטע הקוד הקריטי ובסיומו יזמן את הפעולה release .  שימו לב שה Threads  הממתינים ירוצו בהתאם לסדר בו ביקשו את ה acquire
+
