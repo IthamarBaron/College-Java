@@ -1,0 +1,1 @@
+Create  a program that takes an array of string and prints the most common word
